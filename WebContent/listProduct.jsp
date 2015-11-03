@@ -18,6 +18,12 @@
 			<%= product.getContent() %> <br />
 			<%= product.getPrice() %> euros <br />
 			<a href="showProduct.jsp?id=<%= product.getId() %>">show details</a>
+			
+			<form action= "<%= application.getContextPath() %>/auth/removeProduct" method="POST">
+				<input name="id" type="hidden" value="<%= product.getId() %>" />
+				
+				<input type="submit" value="Remove this" />
+			</form>
 		</p>
 	<% } %>
 	

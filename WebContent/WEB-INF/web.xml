@@ -8,12 +8,10 @@
     <servlet-name>InsertSomeProductServlet</servlet-name>
     <servlet-class>com.supinfo.supcommerce.servlet.InsertSomeProductServlet</servlet-class>
   </servlet>
-
   <servlet>
     <servlet-name>ListProductServlet</servlet-name>
     <servlet-class>com.supinfo.supcommerce.servlet.ListProductServlet</servlet-class>
   </servlet>
-
   <servlet>
     <servlet-name>ShowProductServlet</servlet-name>
     <servlet-class>com.supinfo.supcommerce.servlet.ShowProductServlet</servlet-class>
@@ -22,14 +20,8 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.supinfo.supcommerce.servlet.LoginServlet</servlet-class>
   </servlet>
-  
-  
   <filter>
-      <filter-name>AuthenticateFilter</filter-name>
-      <filter-class>com.supinfo.supcommerce.filter.AuthenticateFilter</filter-class>
+    <filter-name>AuthenticateFilter</filter-name>
+    <filter-class>com.supinfo.supcommerce.filter.AuthenticateFilter</filter-class>
   </filter>
-
-  
-  
-  
 </web-app>

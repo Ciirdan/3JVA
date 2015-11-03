@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class AuthenticateFilter
  */
-//@WebFilter("/auth/*")
+@WebFilter("/auth/*")
 public class AuthenticateFilter implements Filter {
 
     /**
@@ -36,17 +36,12 @@ public class AuthenticateFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
-
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		
-		
-		if (httpRequest.getSession().getAttribute("username") != null) {
+		if (((HttpServletRequest) request).getSession().getAttribute("username") != null) {
 			chain.doFilter(request, response);
 			return;
 		}
-		
 		httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
 	}
 

@@ -16,7 +16,7 @@ import com.supinfo.sun.supcommerce.doa.SupProductDao;
 /**
  * Servlet implementation class ListProductServlet
  */
-//@WebServlet("/ListProductServlet")
+@WebServlet("/listProduct")
 public class ListProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

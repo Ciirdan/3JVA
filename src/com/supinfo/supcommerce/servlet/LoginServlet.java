@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LoginServlet
  */
-//@WebServlet("/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -21,13 +21,10 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String username = request.getParameter("username").trim();
-		
+		String username = request.getParameter("username");
 		request.getSession().setAttribute("username", username);
 		
-		RequestDispatcher dr = request.getRequestDispatcher("/listProduct");
-		dr.forward(request, response);
+		request.getRequestDispatcher("/listProduct").forward(request, response);
 		
 	}
 

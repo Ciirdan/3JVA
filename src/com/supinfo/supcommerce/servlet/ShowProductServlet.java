@@ -16,7 +16,7 @@ import com.supinfo.sun.supcommerce.exception.UnknownProductException;
 /**
  * Servlet implementation class ShowProductServlet
  */
-//@WebServlet("/showProduct")
+@WebServlet("/showProduct")
 public class ShowProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

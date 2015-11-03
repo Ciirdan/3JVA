@@ -1,5 +1,6 @@
 package com.supinfo.supcommerce.servlet;
 
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -14,17 +15,17 @@ import com.supinfo.sun.supcommerce.doa.SupProductDao;
 /**
  * Servlet implementation class InsertSomeProductServlet
  */
-// @WebServlet("/basicInsert")
+//@WebServlet("/basicInsert")
 public class InsertSomeProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void service(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
 		SupProduct product = new SupProduct();
 		product.setName("My Product");
 		product.setPrice(10.05F);

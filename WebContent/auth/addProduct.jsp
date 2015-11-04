@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
 <title>New product</title>
 </head>
 <body>
-<%--<%@ include file="/header.jsp" %> --%>
+<%@ include file="/header.jsp" %>
 	<h1>New product</h1>
 
 <form action="<%= application.getContextPath() %>/auth/addProduct" method="POST">
@@ -19,6 +20,6 @@
 <input type="number" id="price" name="price" /><br />
 <input type="submit" />
 </form>
-<%--<%@ include file="/footer.jsp" %> --%>
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

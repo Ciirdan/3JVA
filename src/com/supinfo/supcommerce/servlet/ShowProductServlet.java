@@ -3,6 +3,7 @@ package com.supinfo.supcommerce.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,20 +25,20 @@ public class ShowProductServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		try {
-			long id = Long.parseLong(request.getParameter("id"));
-			SupProduct product = SupProductDao.findProductById(id);
-			out.println("Name : " + product.getName());
-			out.println("Content : " + product.getContent());
-			out.println("Price : " + product.getPrice());
+		long id = Long.parseLong(request.getParameter("id"));
+		try{
+		request.setAttribute("product", SupProductDao.findProductById(id));
+		RequestDispatcher rd = request.getRequestDispatcher("/showProduct.jsp");
+		rd.forward(request, response);
 		} catch(UnknownProductException e) {
-			out.println("Product not found");
+			response.sendRedirect(request.getContextPath()+ "/listProduct");
 		} catch(NumberFormatException e) {
-			out.println("Incorrect format");
+			response.sendRedirect(request.getContextPath()+ "/listProduct");
 		}
-		
-		
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

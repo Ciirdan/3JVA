@@ -19,7 +19,7 @@
 		<p>
 			<c:out value="${p.content}" /> <br />
 			<c:out value="${p.price}" /> euros <br />
-			<a href="showProduct.jsp?id=<c:out value="${p.id}" />">Show details</a>
+			<a href="showProduct?id=<c:out value="${p.id}" />">Show details</a>
 			</p>
 			<c:if test="${!empty sessionScope.username }">
 			<form method="post" action="${pageContext.request.contextPath}/auth/removeProduct">

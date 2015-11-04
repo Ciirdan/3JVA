@@ -42,7 +42,7 @@ public class AuthenticateFilter implements Filter {
 			chain.doFilter(request, response);
 			return;
 		}
-		httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
+		httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
 	}
 
 	/**
